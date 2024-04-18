@@ -1,6 +1,6 @@
 FROM arm64v8/node:20-bookworm-slim
 
-ENV CHROME_BIN=/usr/bin/chromium-browser
+ENV CHROME_BIN=/usr/bin/chromium
 ENV CHROME_PATH=/usr/lib/chromium/
 ENV MEMORY_CACHE=0
 
