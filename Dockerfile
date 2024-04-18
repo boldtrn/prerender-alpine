@@ -1,11 +1,11 @@
-FROM arm64v8/node:20-alpine
+FROM arm64v8/node:20-bookworm-slim
 
 ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV CHROME_PATH=/usr/lib/chromium/
 ENV MEMORY_CACHE=0
 
 # install chromium, tini and clear cache
-RUN apk add --update-cache chromium tini \
+RUN apt update && apt upgrade -y && apt install chromium tini -y \
  && rm -rf /var/cache/apk/* /tmp/*
 
 USER node
