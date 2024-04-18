@@ -5,8 +5,7 @@ ENV CHROME_PATH=/usr/lib/chromium/
 ENV MEMORY_CACHE=0
 
 # install chromium, tini and clear cache
-RUN apt update && apt upgrade -y && apt install chromium tini -y \
- && rm -rf /var/cache/apk/* /tmp/*
+RUN apt update && apt upgrade -y && apt install chromium tini -y
 
 USER node
 WORKDIR "/home/node"
