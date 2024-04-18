@@ -5,7 +5,7 @@ ENV CHROME_PATH=/usr/lib/chromium/
 ENV MEMORY_CACHE=0
 
 # install chromium, tini and clear cache
-RUN apt update && apt upgrade -y && apt install chromium tini -y
+RUN apt update && apt upgrade -y && apt install chromium tini git -y
 
 USER node
 WORKDIR "/home/node"
@@ -18,5 +18,5 @@ RUN npm install --no-package-lock
 
 EXPOSE 3000
 
-ENTRYPOINT ["tini", "--"]
+ENTRYPOINT ["/usr/bin/tini", "--"]
 CMD ["node", "server.js"]
