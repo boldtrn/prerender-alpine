@@ -1,4 +1,4 @@
-FROM arm64v8/node:18-alpine
+FROM arm64v8/node:20-alpine
 
 ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV CHROME_PATH=/usr/lib/chromium/
